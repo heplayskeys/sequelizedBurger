@@ -1,0 +1,68 @@
+<br>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12 text-center">
+            <a href="/"><img src="/assets/images/burger3.png"/></a>
+        </div>
+
+        <div class="col-lg-12 text-center">
+            <br>
+            <h1>Eat-Da-Burger!</h1>
+            <hr>
+        </div>
+    </div>
+
+    <div class="row">
+
+        <div class="col-lg-2"></div>
+
+        <div class="col-lg-4">
+            <h5>Eat-Deez Burgers:</h5>
+            <ol>
+                {{#each burgers}}
+                    {{#unless devoured}}
+                        <li><p>
+                            <strong>{{burger_name}}</strong> <button class="btn btn-sm btn-secondary devourBurger" data-id="{{id}}">Devour It!</button>
+                        </p></li>
+                    {{/unless}}
+                {{/each}}
+            </ol>
+        </div>
+
+        <div class="col-lg-4">
+            <h5>Devoured Burgers:</h5>
+            <ul>
+                {{#each burgers}}
+                    {{#if devoured}}
+                        <li><p>
+                            {{burger_name}}
+                        </p></li>
+                    {{/if}}
+                {{/each}}
+            </ul>
+            <br>
+        </div>
+
+        <div class="col-lg-2"></div>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-12 text-center">
+            <form class="burgerCreate">
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-lg-3"></div>
+                        <div class="col-lg-6">
+                            <textarea class="form-control" id="burgerInput" rows="3"></textarea>
+                        </div>
+                        <div class="col-lg-3"></div>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary" id="burgerSubmit">Submit</button>
+                <br>
+                <br>
+                <span>Enter a buger you want to eat and Click the "Submit" button.</span>
+            </form>
+        </div>
+    </div>
+</div>
